@@ -1,0 +1,27 @@
+{
+  "name": "reverse-proxy-mapping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betimer/reverse-proxy-mapping.git"
+  },
+  "keywords": [
+    "reverse",
+    "proxy",
+    "multiple",
+    "sites",
+    "single",
+    "server"
+  ],
+  "author": "Xin Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/betimer/reverse-proxy-mapping/issues"
+  },
+  "homepage": "https://github.com/betimer/reverse-proxy-mapping#readme"
+}

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/betimer/reverse-proxy-mapping/issues"
   },
-  "homepage": "https://github.com/betimer/reverse-proxy-mapping#readme"
+  "homepage": "https://github.com/betimer/reverse-proxy-mapping#readme",
+  "dependencies": {
+    "http-proxy": "1.16.2"
+  }
 }

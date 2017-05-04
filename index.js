@@ -14,6 +14,7 @@ function startAll() {
 
 function add(port, mapping, certKey) {
   var reverse = (req, res) => {
+    // todo: may consider improve this one, to cover sub-url as well e.g. v1/api/
     let host = req.headers.host.split(':')[0];
     if(mapping[host]) {
       console.log("resolving:", host);

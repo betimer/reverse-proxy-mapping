@@ -12,7 +12,8 @@
   },
   "keywords": [
     "reverse-proxy",
-    "multiple-sites",
+    "multiple-domains",
+    "multiple-hosts",
     "single-server"
   ],
   "author": "Xin Wang",

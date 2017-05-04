@@ -11,12 +11,9 @@
     "url": "git+https://github.com/betimer/reverse-proxy-mapping.git"
   },
   "keywords": [
-    "reverse",
-    "proxy",
-    "multiple",
-    "sites",
-    "single",
-    "server"
+    "reverse-proxy",
+    "multiple-sites",
+    "single-server"
   ],
   "author": "Xin Wang",
   "license": "ISC",

@@ -8,3 +8,24 @@ You may have multiple domains/subdomains, and you want all host them in the same
 This package helps you easily to achieve that.
 
 Your main work is to config it.
+
+```javascript
+const servers = require('reverse-proxy-mapping');
+
+servers.add(3004, {
+  'host1.domain1.com': 'http://localhost:3001',
+  'host2.domain1.com': 'http://localhost:3002',
+  'domain2.com': 'http://localhost:3002',
+  'local.betimer.com': 'http://localhost:8001'
+});
+
+servers.add(3005, {
+  'host1.domain1.com': 'http://localhost:3001',
+  'host2.domain1.com': 'http://localhost:3002',
+  'domain2.com': 'http://localhost:3002',
+  'local.betimer.com': 'http://localhost:8001'
+});
+
+servers.startAll();
+
+```

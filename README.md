@@ -33,8 +33,8 @@ servers.add(3006, {
   'domain2.com': 'http://localhost:3002',
   'local.betimer.com': 'http://localhost:8001'
 },{
-  cert: fs.readFileSync('cert.pem'),
-  key: fs.readFileSync('privkey.pem')
+  cert: cert,
+  key: key
 });
 
 servers.startAll();

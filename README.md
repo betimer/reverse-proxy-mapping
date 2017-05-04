@@ -1,4 +1,5 @@
 # reverse-proxy-mapping
+[![npm version](https://img.shields.io/npm/v/reverse-proxy-mapping.svg)](https://www.npmjs.com/package/reverse-proxy-mapping)
 
 This package is mainly created for single server hosting for multiple websites.
 

@@ -1,6 +1,6 @@
 {
   "name": "reverse-proxy-mapping",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/betimer/reverse-proxy-mapping#readme",
   "dependencies": {
-    "http-proxy": "1.16.2"
+    "http-proxy": "^1.16.2"
   }
 }

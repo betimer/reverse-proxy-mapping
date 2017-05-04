@@ -26,6 +26,17 @@ servers.add(3005, {
   'local.betimer.com': 'http://localhost:8001'
 });
 
+// https example
+servers.add(3006, {
+  'host1.domain1.com': 'http://localhost:3001',
+  'host2.domain1.com': 'http://localhost:3002',
+  'domain2.com': 'http://localhost:3002',
+  'local.betimer.com': 'http://localhost:8001'
+},{
+  cert: fs.readFileSync('cert.pem'),
+  key: fs.readFileSync('privkey.pem')
+});
+
 servers.startAll();
 
 ```

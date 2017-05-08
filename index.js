@@ -16,12 +16,17 @@ function add(port, mapping, certKey) {
   var reverse = (req, res) => {
     // todo: may consider improve this one, to cover sub-url as well e.g. v1/api/
     let host = req.headers.host.split(':')[0];
-    if(mapping[host]) {
-      console.log("resolving:", host);
-      proxy.web(req, res, { target: mapping[host] });
+    let route = req.url.split('?')[0];
+    route = route.endsWith('/') ? route.substr(0, route.length - 1) : route;
+    let mapFrom = host + route;
+    if(mapping[mapFrom]) {
+      console.log("resolving:", mapFrom);
+      proxy.web(req, res, { target: mapping[mapFrom] });
     }
     else {
       console.warn("cannot find rule in the mapping:", host);
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end("Unmapped url");
     }
   };
 

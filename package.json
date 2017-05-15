@@ -24,5 +24,8 @@
   "homepage": "https://github.com/betimer/reverse-proxy-mapping#readme",
   "dependencies": {
     "http-proxy": "^1.16.2"
+  },
+  "devDependencies": {
+    "express": "4.15.2"
   }
 }

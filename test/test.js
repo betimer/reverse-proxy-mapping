@@ -1,5 +1,5 @@
 console.log("start testing");
-const servers = require('./index');
+const servers = require('../index');
 
 // domains
 servers.add(3004, {

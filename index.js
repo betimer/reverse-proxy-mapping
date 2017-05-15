@@ -20,18 +20,22 @@ function add(port, mapping, certKey) {
     // take out the query strings
     let route = req.url.split('?')[0];
     route = route.endsWith('/') ? route.substr(0, route.length - 1) : route;
-
     // construct url
     let mapFrom = host + route;
-    if (mapping[mapFrom]) {
-      console.log("resolving:", mapFrom);
-      proxy.web(req, res, { target: mapping[mapFrom] });
+
+    // checking mapping
+    for (const from in mapping) {
+      if (mapFrom.startsWith(from)) {
+        console.log("resolving:", mapFrom);
+        proxy.web(req, res, { target: mapping[from] });
+        return;
+      }
     }
-    else {
-      console.warn("cannot find rule in the mapping:", host);
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.end("Unmapped url");
-    }
+
+    // cannot find route mapping rule
+    console.warn("cannot find rule in the mapping:", mapFrom);
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end("Unmapped url: " + mapFrom);
   };
 
   // add node server into the server list

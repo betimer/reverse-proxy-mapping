@@ -7,8 +7,9 @@ const servers = [];
 const ports = [];
 
 function startAll() {
-  for(let i = 0; i < servers.length; i++) {
+  for (let i = 0; i < servers.length; i++) {
     servers[i].listen(ports[i]);
+    console.log("Started server on port:", ports[i]);
   }
 }
 
@@ -19,9 +20,10 @@ function add(port, mapping, certKey) {
     // take out the query strings
     let route = req.url.split('?')[0];
     route = route.endsWith('/') ? route.substr(0, route.length - 1) : route;
+
     // construct url
     let mapFrom = host + route;
-    if(mapping[mapFrom]) {
+    if (mapping[mapFrom]) {
       console.log("resolving:", mapFrom);
       proxy.web(req, res, { target: mapping[mapFrom] });
     }
@@ -32,8 +34,9 @@ function add(port, mapping, certKey) {
     }
   };
 
+  // add node server into the server list
   ports.push(port);
-  if(certKey) {
+  if (certKey) {
     servers.push(https.createServer(certKey, reverse));
   }
   else {

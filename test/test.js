@@ -1,4 +1,4 @@
-console.log("start testing");
+console.log("start testing.");
 const servers = require('../index');
 
 // domains
